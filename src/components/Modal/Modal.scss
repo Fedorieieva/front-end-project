@@ -1,0 +1,80 @@
+.modal-wrapper{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: right;
+
+  background-color: rgba(7, 15, 49, 0.44);
+  color:  #D1DDED;
+  font-size: 18px;
+
+
+  .modal-content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding: 20px;
+    background: linear-gradient(136deg, #031930 40.65%, #2c4d77 67.12%, #39659b 83.56%, #477cbf 100%);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    width: 300px;
+
+    &__header{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal__body{
+      padding: 24px 0;
+
+      border-top: #D1DDED 1px solid;
+      border-bottom: #D1DDED 1px solid;
+
+      .modal__nav-list{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .modal__nav-link{
+          color:  #D1DDED;
+
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .modal__footer{
+      margin-top: auto;
+
+      .log-out-btn{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color:  #D1DDED;
+        font-size: 18px;
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+

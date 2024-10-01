@@ -1,0 +1,13 @@
+.todo-widget__wrapper{
+  display: flex;
+  gap: 40px;
+  width: 100%;
+
+  .todo{
+    flex: 3;
+  }
+
+  .widget{
+    flex: 1;
+  }
+}

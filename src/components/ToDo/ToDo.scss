@@ -1,0 +1,122 @@
+.todo__wrapper{
+  background-color: #213a59;
+  padding: 10px 25px;
+  box-shadow: 12px 12px 20px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+
+  .add-task {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    //.icon__wrapper{
+    //  padding-right: 10px;
+    //  border-right: #031930 2px solid;
+    //}
+
+    .form-task {
+      display: flex;
+      align-items: center;flex-grow: 1;
+    }
+
+    .task-massage {
+      flex-grow: 1;
+      height: 42px;
+      padding: 0 14px;
+      margin-right: 15px;
+      caret-color: #031930;
+      background-color: transparent;
+      font-size: 20px;
+      border: #031933 2px solid;
+      border-radius: 7px;
+
+      &::placeholder {
+        font-size: 20px;
+        transition: color 0.1s ease-in-out;
+        color: #758ba5;
+      }
+
+      &:hover,
+      &:focus {
+        border-color: #3684DB;
+      }
+    }
+
+    .task-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  }
+
+
+  .list-todo{
+    display: flex;
+    margin-bottom: 10px;
+
+    .g-checkbox {
+      position: relative;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      width: 100%;
+
+      input[type=checkbox] {
+        position: absolute;
+        visibility: hidden;
+      }
+
+      input:checked {
+        ~ .label:before {
+          background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' stroke-width='4' stroke='dodgerblue' fill='dodgerblue'%0A%3E%3Cpath d='M13 2 h74 a11 11,0 0 1,11 11 v74 a11 11,0 0 1,-11 11 h-74 a11 11,0 0 1,-11-11 v-74 a11 11,0 0 1,11-11 z'/%3E%3Cpath fill='white' stroke='white' d='M20 54 l20 20,40-40,-2-2,-38 38,-18-18 z' /%3E%3C/svg%3E%0A");
+        }
+      }
+
+      .label {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        &:before {
+          //margin-right: 5px;
+          //border-right: #031930 2px solid;
+          content: '';
+          flex-shrink: 0;
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' stroke-width='4' stroke='black' fill='white'%0A%3E%3Cpath d='M13 2 h74 a11 11,0 0 1,11 11 v74 a11 11,0 0 1,-11 11 h-74 a11 11,0 0 1,-11-11 v-74 a11 11,0 0 1,11-11 z' /%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .label-content {
+          display: flex;
+          width: 100%;
+          margin-left: 8px;
+
+        }
+      }
+    }
+
+    .list-actions{
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
