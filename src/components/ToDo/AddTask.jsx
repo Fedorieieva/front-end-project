@@ -29,9 +29,9 @@ const AddTask = () => {
 
     return (
         <div className="add-task">
-            <div className="icon__wrapper">
-                <Check calssName='check-icon'/>
-            </div>
+            {/*<div className="icon__wrapper">*/}
+            {/*    <Check calssName='check-icon'/>*/}
+            {/*</div>*/}
 
             <form className="form-task" onSubmit={handleSubmit}>
                 <input

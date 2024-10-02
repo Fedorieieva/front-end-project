@@ -5,15 +5,14 @@
   border-radius: 20px;
 
   .add-task {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    justify-content: space-between;
+    //display: flex;
+    //gap: 20px;
+    //align-items: center;
+    //justify-content: space-between;
     margin-bottom: 24px;
 
     //.icon__wrapper{
-    //  padding-right: 10px;
-    //  border-right: #031930 2px solid;
+    //  padding: 5px;
     //}
 
     .form-task {
@@ -31,6 +30,7 @@
       font-size: 20px;
       border: #031933 2px solid;
       border-radius: 7px;
+      color: #D1DDED;
 
       &::placeholder {
         font-size: 20px;
@@ -52,62 +52,24 @@
     }
   }
 
-
   .list-todo{
     display: flex;
+    gap: 7px;
+    align-items: flex-start;
     margin-bottom: 10px;
 
-    .g-checkbox {
-      position: relative;
-      display: flex;
-      align-items: center;
-      cursor: pointer;
+    .todo-task-info{
+      resize: none;
       width: 100%;
-
-      input[type=checkbox] {
-        position: absolute;
-        visibility: hidden;
-      }
-
-      input:checked {
-        ~ .label:before {
-          background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' stroke-width='4' stroke='dodgerblue' fill='dodgerblue'%0A%3E%3Cpath d='M13 2 h74 a11 11,0 0 1,11 11 v74 a11 11,0 0 1,-11 11 h-74 a11 11,0 0 1,-11-11 v-74 a11 11,0 0 1,11-11 z'/%3E%3Cpath fill='white' stroke='white' d='M20 54 l20 20,40-40,-2-2,-38 38,-18-18 z' /%3E%3C/svg%3E%0A");
-        }
-      }
-
-      .label {
-        display: flex;
-        align-items: center;
-        width: 100%;
-
-        &:before {
-          //margin-right: 5px;
-          //border-right: #031930 2px solid;
-          content: '';
-          flex-shrink: 0;
-          display: inline-block;
-          width: 24px;
-          height: 24px;
-          background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' stroke-width='4' stroke='black' fill='white'%0A%3E%3Cpath d='M13 2 h74 a11 11,0 0 1,11 11 v74 a11 11,0 0 1,-11 11 h-74 a11 11,0 0 1,-11-11 v-74 a11 11,0 0 1,11-11 z' /%3E%3C/svg%3E");
-          background-repeat: no-repeat;
-          background-size: cover;
-        }
-
-        .label-content {
-          display: flex;
-          width: 100%;
-          margin-left: 8px;
-
-        }
-      }
+      color: white;
+      background-color: transparent;
+      min-height: 24px;
     }
 
     .list-actions{
       display: flex;
       align-items: center;
       gap: 5px;
-
-
     }
   }
 

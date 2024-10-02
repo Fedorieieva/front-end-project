@@ -1,0 +1,48 @@
+.label--checkbox {
+  position: relative;
+  margin: 8px;
+  font-family: Arial, sans-serif;
+  line-height: 135%;
+  cursor: pointer;
+}
+
+.checkbox {
+  position: relative;
+  top: -6px;
+  margin: 0 16px 0 0;
+  cursor: pointer;
+
+
+  &:before {
+    transition: all 0.3s ease-in-out;
+    content: "";
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f2f2f2;
+  }
+
+  &:checked {
+    &:before {
+      transform: rotate(-45deg);
+      height: 8px;
+      border-color: #3684DB;
+      border-top-style: none;
+      border-right-style: none;
+    }
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 17.6px;
+    height: 17.6px;
+    background-color: #213a59;
+    cursor: pointer;
+  }
+}
+
