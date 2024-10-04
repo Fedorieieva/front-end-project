@@ -1,11 +1,9 @@
 import {createSlice} from "@reduxjs/toolkit";
+import {getFromStorage} from '@/helpers/getFromStorage.js';
 
-const getTasksFromStorage = () => {
-    return JSON.parse(localStorage.getItem('todo')) || [];
-}
 
 const initialState = {
-    toDoList: getTasksFromStorage()
+    toDoList: getFromStorage('todo')
 }
 
 const toDoSlice = createSlice({

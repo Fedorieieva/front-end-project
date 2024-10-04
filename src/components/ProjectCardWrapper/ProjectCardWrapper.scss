@@ -1,0 +1,16 @@
+.project-card__wrapper{
+  max-width: 100vw;
+
+  .project-card__list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 150px;
+    gap: 20px;
+
+    .project-card__add-project{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

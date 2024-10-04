@@ -3,7 +3,6 @@ import cn from 'classnames';
 import PropTypes from "prop-types";
 
 
-
 const ModalFooter = (props) => {
     const {children, className} = props;
 

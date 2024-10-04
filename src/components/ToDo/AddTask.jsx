@@ -19,7 +19,7 @@ const AddTask = () => {
         };
 
         if (taskToAdd.task.length === 0) {
-            return null
+            return null;
         }
 
         dispatch(actionAddTask(taskToAdd));

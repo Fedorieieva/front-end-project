@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
+import cn from 'classnames';
 
 
 const ModalWrapper = (props) => {
-    const {children, onClick} = props;
+    const {children, onClick, className} = props;
 
     return (
-        <div className='modal-wrapper' onClick={onClick}>
+        <div className={cn('modal-wrapper', className)} onClick={onClick}>
             {children}
         </div>
     )
