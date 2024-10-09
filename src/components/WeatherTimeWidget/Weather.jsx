@@ -17,6 +17,7 @@ const Weather = () => {
             <div className="meta">
                 {/*<Temp/>*/}
                 <p className="temperature">{meta?.feelslike}°C</p>
+                <p className="city">{meta?.city}</p>
             </div>
         </div>
     )
