@@ -1,34 +1,28 @@
-.project-card{
+.project-card {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-
-
   padding: 15px;
   height: 100%;
   width: 100%;
   background-color: #B3D6F9;
   border-radius: 20px;
 
-  &__delete-btn{
+  &__delete-btn {
     align-self: flex-end;
   }
 
-  &__info{
+  &__info {
     max-width: 100%;
-    //white-space: nowrap;
-    text-overflow: ellipsis;
-
     color: #031933;
     line-height: 120%;
 
     .bold {
       font-weight: bold;
     }
-
   }
 
-  &__name{
+  &__name {
     margin-bottom: 15px;
   }
 
@@ -36,9 +30,8 @@
   &__description {
     display: block;
     max-width: 100%;
-
-     /* Ensure overflow is hidden */
-    // /* Prevent wrapping for single line */
-     /* Show ellipsis for single-line overflow */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; 
   }
 }
