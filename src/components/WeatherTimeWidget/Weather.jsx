@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchWeather} from "@/store/slices/weather.slice.js";
-import Temp from "./icons/temp.svg?react"
+// import Temp from "./icons/temp.svg?react"
 
 const Weather = () => {
     const dispatch = useDispatch();
@@ -16,7 +16,7 @@ const Weather = () => {
         <div className='weather-widget'>
             <div className="meta">
                 {/*<Temp/>*/}
-                <p className="temperature">{meta?.feelslike}°C</p>
+                <p className="temperature">{meta?.feelslike}°c</p>
                 <p className="city">{meta?.city}</p>
             </div>
         </div>

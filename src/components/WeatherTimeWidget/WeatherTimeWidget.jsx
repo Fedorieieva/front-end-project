@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
-import './WeatherTimeWidget.scss'
+import './WeatherTimeWidget.scss';
 import Weather from "@/components/WeatherTimeWidget/Weather.jsx";
 import cn from 'classnames';
+import PropTypes from "prop-types";
 
 const WeatherTimeWidget = ({className}) => {
     const [time, setTime] = useState(new Date());
@@ -18,13 +19,19 @@ const WeatherTimeWidget = ({className}) => {
 
     return (
         <div className={cn('weather-time-widget__wrapper', className)}>
-            <div className="time-widget">
-                <p>{formattedTime}</p>
-            </div>
+            <div className="additional__wrapper">
+                <div className="time-widget">
+                    <p>{formattedTime}</p>
+                </div>
 
-            <Weather/>
+                <Weather/>
+            </div>
         </div>
     );
 };
+
+WeatherTimeWidget.propTypes = {
+    className: PropTypes.string
+}
 
 export default WeatherTimeWidget;
