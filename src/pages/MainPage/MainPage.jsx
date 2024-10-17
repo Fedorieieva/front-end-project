@@ -11,7 +11,6 @@ const MainPage = () => {
         <Container>
             <div className="todo-widget__wrapper">
                 <ToDo className='todo'/>
-                <WorkModePage className='work-mode'/>
                 <WeatherTimeWidget className='widget'/>
             </div>
         </Container>
