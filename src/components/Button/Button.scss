@@ -2,5 +2,19 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  transition: 700ms;
+
+  &:hover{
+    transform: scale(1.05);
+  }
+
+  &--transparent {
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: #B3D6F9 2px solid;
+    color: #D1DDED;
+    font-size: 14px;
+  }
 }
 

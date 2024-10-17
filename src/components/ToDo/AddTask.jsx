@@ -4,7 +4,6 @@ import Button from "@/components/Button/Button.jsx";
 import {useDispatch} from "react-redux";
 import {actionAddTask} from "@/store/slices/todo.slice.js";
 import Plus from './icons/plus.svg?react';
-import Check from './icons/Check.svg?react';
 
 
 const AddTask = () => {
@@ -14,6 +13,7 @@ const AddTask = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const taskToAdd = {
+            id: Date.now(),
             task: inputRef.current.value.trim(),
             isCompleted: false
         };
@@ -29,10 +29,6 @@ const AddTask = () => {
 
     return (
         <div className="add-task">
-            {/*<div className="icon__wrapper">*/}
-            {/*    <Check calssName='check-icon'/>*/}
-            {/*</div>*/}
-
             <form className="form-task" onSubmit={handleSubmit}>
                 <input
                     className="task-massage"
