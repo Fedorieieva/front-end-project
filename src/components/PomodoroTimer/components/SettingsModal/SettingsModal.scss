@@ -1,0 +1,38 @@
+.settings-modal__wrapper {
+  justify-content: center;
+  align-items: center;
+
+  .settings-modal__content {
+    min-width: 600px;
+    max-height: 95vh; /* Set a max height for the modal */
+    overflow-y: auto;
+    padding: 25px;
+    box-shadow: 12px 12px 20px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    background: linear-gradient(136deg, #031930 40.65%, #2c4d77 67.12%, #39659b 83.56%, #477cbf 100%);
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #B3D6F9;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #A1C8E0;
+    }
+  }
+
+  .modal-content__header {
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+
+  }
