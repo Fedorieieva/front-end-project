@@ -4,12 +4,14 @@ import WeatherTimeWidget from "@/components/WeatherTimeWidget/WeatherTimeWidget.
 
 import './MainPage.scss';
 import Container from "@/components/Container/Container.jsx";
+import WorkModePage from "@/pages/WorkModePage/WorkModePage.jsx";
 
 const MainPage = () => {
     return(
         <Container>
             <div className="todo-widget__wrapper">
                 <ToDo className='todo'/>
+                <WorkModePage className='work-mode'/>
                 <WeatherTimeWidget className='widget'/>
             </div>
         </Container>
