@@ -7,10 +7,12 @@
     grid-auto-rows: 150px;
     gap: 20px;
 
-    .project-card__add-project{
+    .add-project-btn{
       display: flex;
       justify-content: center;
       align-items: center;
+      background-color: rgba(179, 214, 249, 0.42);
+      border-radius: 20px;
     }
   }
 }

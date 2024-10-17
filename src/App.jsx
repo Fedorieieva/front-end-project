@@ -5,6 +5,7 @@ import {Routes, Route} from "react-router-dom";
 import MainPage from './pages/MainPage/MainPage.jsx';
 import ProjectModal from '@/components/ProjectModal/ProjectModal.jsx';
 import ProjectsPage from "@/pages/ProjectsPage/ProjectsPage.jsx";
+import ProjectPage from "@/pages/ProjectPage/ProjectPage.jsx";
 
 
 function App() {
@@ -16,10 +17,11 @@ function App() {
             <Routes>
                 <Route index element={<MainPage/>} />
                 <Route path='/projects' element={<ProjectsPage/>} />
+                <Route path="/projects/:projectId" element={<ProjectPage />} />
             </Routes>
 
             {/*{localStorage.removeItem('projects')}*/}
-            {/*{console.log(JSON.parse(localStorage.getItem('projects')))}*/}
+            {console.log(JSON.parse(localStorage.getItem('projects')))}
             {/*<ProjectModal onClose={onclose}/>*/}
 
 

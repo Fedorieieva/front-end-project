@@ -64,6 +64,10 @@
       color: white;
       background-color: transparent;
       min-height: 24px;
+
+      &:focus{
+        border-color: #3684DB;
+      }
     }
 
     .list-actions{

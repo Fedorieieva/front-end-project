@@ -1,39 +1,38 @@
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useRef} from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from "prop-types";
-import cn from 'classnames'
 
 import './ProjectModal.scss';
 import Button from "@/components/Button/Button.jsx";
-import {Link} from "react-router-dom";
-import {ModalBody, ModalClose, ModalFooter, ModalHeader, ModalWrapper} from "@/components/Modal/index.js";
+import {ModalBody, ModalClose, ModalHeader, ModalWrapper} from "@/components/Modal/index.js";
 import Close from './icons/x.svg?react';
 import {useDispatch} from "react-redux";
-import {actionAddProject} from "@/store/slices/project.slice.js";
+import {actionAddProject, actionEditProject} from "@/store/slices/project.slice.js";
 
-const ProjectModal = ({onClose}) => {
+const ProjectModal = ({onClose, project = null}) => {
     const dispatch = useDispatch();
     const nameInputRef = useRef();
     const descriptionInputRef = useRef();
     const infoInputRef = useRef();
 
     const handleSubmit = async (event) => {
-        const projectId = `${Date.now()}-${Math.floor(Math.random() * 1000)}`;
-
-        const projectToAdd = {
-            id: projectId, // Add the generated ID
+        const projectData = {
+            id: project ? project.id : `${Date.now()}-${Math.floor(Math.random() * 1000)}`,
             name: nameInputRef.current.value.trim(),
             description: descriptionInputRef.current.value.trim(),
             info: infoInputRef.current.value.trim(),
             kanban: []
         };
 
-        console.log(projectToAdd)
-        if(projectToAdd.name.length === 0){
+        if (projectData.name.length === 0) {
             return null;
         }
 
-        dispatch(actionAddProject(projectToAdd));
+        if (project) {
+            dispatch(actionEditProject(projectData));
+        } else {
+            dispatch(actionAddProject(projectData));
+        }
 
         nameInputRef.current.value = '';
         descriptionInputRef.current.value = '';
@@ -41,11 +40,17 @@ const ProjectModal = ({onClose}) => {
     }
 
     useEffect(() => {
+        if (project) {
+            nameInputRef.current.value = project.name;
+            descriptionInputRef.current.value = project.description;
+            infoInputRef.current.value = project.info;
+        }
+
         document.body.style.overflow = 'hidden';
         return () => {
             document.body.style.overflow = 'unset';
         };
-    }, []);
+    }, [project]);
 
     return ReactDOM.createPortal(
         <ModalWrapper onClick={onClose} className='project-modal__wrapper'>
@@ -54,7 +59,7 @@ const ProjectModal = ({onClose}) => {
                 onClick={(event) => event.stopPropagation()}
             >
                 <ModalHeader className='modal-content__header'>
-                    <ModalClose className='modal__close-icon' onClick={onClose} >
+                    <ModalClose className='modal__close-icon' onClick={onClose}>
                         <Close/>
                     </ModalClose>
                 </ModalHeader>
@@ -92,5 +97,15 @@ const ProjectModal = ({onClose}) => {
         document.body
     );
 }
+
+ProjectModal.propTypes = {
+    onClose: PropTypes.func.isRequired,
+    project: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string,
+        info: PropTypes.string,
+    })
+};
 
 export default ProjectModal

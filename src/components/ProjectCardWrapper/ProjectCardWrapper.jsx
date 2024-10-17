@@ -14,15 +14,14 @@ const ProjectCardWrapper = ({data}) => {
         <Container>
             <div className="project-card__wrapper">
                 <ul className="project-card__list">
-                    <li className='project-card__item project-card__add-project'>
-                        <Button
-                            className='add-project-btn'
-                            onClick={() => setIsModalOpen(true)}
-                        >
+                    <Button
+                        className='add-project-btn'
+                        onClick={() => setIsModalOpen(true)}
+                    >
+                        <li className='project-card__item project-card__add-project'>
                             <Plus/>
-                        </Button>
-                    </li>
-
+                        </li>
+                    </Button>
                     {
                         data.map((item) => (
                             <li className='project-card__item' key={item.id}>

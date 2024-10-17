@@ -1,0 +1,28 @@
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  width: 100%;
+
+  .edit-project-btn {
+    align-self: flex-end;
+    width: 170px;
+    color: #163c6b;
+    text-transform: uppercase;
+  }
+
+  .project-info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    .project-item {
+      .info-bold {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
