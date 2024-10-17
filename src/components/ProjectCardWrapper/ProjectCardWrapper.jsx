@@ -36,7 +36,7 @@ const ProjectCardWrapper = ({data}) => {
                 <ProjectModal onClose={() => setIsModalOpen(false)}/>
             )}
         </Container>
-    )
-}
+    );
+};
 
-export default ProjectCardWrapper
+export default ProjectCardWrapper;
