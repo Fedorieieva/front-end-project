@@ -4,7 +4,9 @@ import Header from "@/components/Header/Header.jsx";
 import {Routes, Route} from "react-router-dom";
 import MainPage from './pages/MainPage/MainPage.jsx';
 import ProjectsPage from "@/pages/ProjectsPage/ProjectsPage.jsx";
+
 import ProjectPage from "@/pages/ProjectPage/ProjectPage.jsx";
+import WorkModePage from "@/pages/WorkModePage/WorkModePage.jsx";
 
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
 
             <Routes>
                 <Route index element={<MainPage/>} />
+                <Route path='/work-mode' element={<WorkModePage/>} />
                 <Route path='/projects' element={<ProjectsPage/>} />
                 <Route path="/projects/:projectId" element={<ProjectPage />} />
             </Routes>
