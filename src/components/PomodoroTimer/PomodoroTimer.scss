@@ -1,0 +1,102 @@
+.pomodoro-timer {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.timer-display {
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+
+.settings {
+    margin-top: 20px;
+}
+
+.settings label {
+    display: block;
+    margin: 10px 0;
+}
+
+.settings input {
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 1em;
+}
+
+.pomodoro-timer-wrapper{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    background: linear-gradient(0deg, #031930 1%, #497cbf 100%);
+    color: #fff;
+    padding: 10px 25px;
+    box-shadow: 12px 12px 20px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+
+}
+
+.timer-display{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .pomodoro-time{
+        font-size: 60px;
+    }
+    .state-name{
+        font-size: 50px;
+    }
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+.control-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &.settings-btn {
+        background-color: #679eba;
+        color: white;
+
+        &:hover {
+            background-color: #45a049;
+        }
+    }
+
+    &.start-btn {
+        background-color: #008CBA;
+        color: white;
+
+        &:hover {
+            background-color: #007B9E;
+        }
+    }
+
+    &.skip-btn {
+        background-color: #679eba;
+        color: white;
+
+        &:hover {
+            background-color: #e53935;
+        }
+    }
+
+    &.pause-btn {
+        background-color: #008CBA;
+        color: white;
+
+        &:hover {
+            background-color: #4b78ff;
+        }
+    }
+}
