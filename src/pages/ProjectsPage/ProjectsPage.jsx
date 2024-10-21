@@ -4,7 +4,7 @@ import ProjectCardWrapper from "@/components/ProjectCardWrapper/ProjectCardWrapp
 
 const ProjectsPage = () => {
     const projectsList = useSelector((state) => state.projects.projectsList);
-
+// console.log(projectsList)
     return (
         <ProjectCardWrapper data={projectsList}/>
     )

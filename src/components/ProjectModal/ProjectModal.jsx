@@ -89,7 +89,9 @@ const ProjectModal = ({onClose, project = null}) => {
                         <Button
                             className='btn--transparent'
                             type='submit'
-                        >SAVE</Button>
+                        >
+                            SAVE
+                        </Button>
                     </form>
                 </ModalBody>
             </div>

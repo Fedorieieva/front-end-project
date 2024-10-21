@@ -1,0 +1,89 @@
+.kanban-board__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  padding: 25px;
+  box-shadow: 12px 12px 20px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  background: linear-gradient(136deg, #031930 40.65%, #2c4d77 67.12%, #39659b 83.56%, #477cbf 100%);
+
+  .kanban-form {
+    display: grid;
+    grid-template-columns: 6fr 1fr 1fr;
+    gap: 15px;
+
+    .kanban-task {
+      flex-grow: 1;
+      height: 42px;
+      padding: 0 14px;
+      caret-color: #D1DDED;
+      background-color: transparent;
+      font-size: 20px;
+      border: #175aa9 2px solid;
+      border-radius: 7px;
+      color: #D1DDED;
+
+      &::placeholder {
+        font-size: 20px;
+        transition: color 0.1s ease-in-out;
+        color: #758ba5;
+      }
+
+      &:hover,
+      &:focus {
+        border-color: #3684DB;
+      }
+    }
+
+    .kanban-task__status {
+      border-radius: 7px;
+      text-transform: uppercase;
+      padding: 0 7px;
+    }
+  }
+
+  .kanban-tasks__wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+
+    .kanban-column {
+      .kanban-column__title {
+        margin-bottom: 15px;
+
+        text-align: center;
+        color: #D1DDED;
+      }
+
+      &__cards-wrapper{
+        display: grid;
+        gap: 5px;
+      }
+
+      .kanban-task-card {
+        display: grid;
+        gap: 12px;
+        padding: 10px;
+        background-color: #D1DDED;
+        border-radius: 7px;
+
+        .kanban-card__actions{
+          display: flex;
+          justify-content: flex-end;
+          gap: 3px;
+
+          .kanban-card-btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 25px;
+            width: 25px;
+            background-color: #232326;
+            border-radius: 100%;
+          }
+        }
+      }
+    }
+  }
+}

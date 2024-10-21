@@ -1,0 +1,1 @@
+export const status = ["to-do", "in-progress", "review", "done"];
