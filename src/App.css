@@ -9,13 +9,8 @@ body::-webkit-scrollbar {
     width: 8px;
 }
 
-body::-webkit-scrollbar-track {
-    border-radius: 10px;
-}
-
 body::-webkit-scrollbar-thumb {
-    background: #316598;
-    border-radius: 10px;
+    background: rgba(161, 200, 224, 0.76);
 }
 
 body::-webkit-scrollbar-thumb:hover {

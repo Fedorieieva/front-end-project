@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import PropTypes from "prop-types";
 import Container from "@/components/Container/Container.jsx";
 import ProjectCard from "@/components/ProjectCard/ProjectCard.jsx";
 import Plus from './icons/plus.svg?react';
@@ -8,6 +9,7 @@ import Button from "@/components/Button/Button.jsx";
 import ProjectModal from "@/components/ProjectModal/ProjectModal.jsx";
 
 const ProjectCardWrapper = ({data}) => {
+    // console.log(data)
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
@@ -38,5 +40,9 @@ const ProjectCardWrapper = ({data}) => {
         </Container>
     );
 };
+
+// ProjectCardWrapper.propTypes = {
+//     data: PropTypes.object
+// }
 
 export default ProjectCardWrapper;

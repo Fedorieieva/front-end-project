@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import './ProjectCard.scss';
 import Delete from './icons/x.svg?react';
 import Button from "@/components/Button/Button.jsx";
@@ -35,6 +36,10 @@ const ProjectCard = ({project}) => {
             </Link>
         </div>
     )
+}
+
+ProjectCard.propTypes = {
+    project: PropTypes.object
 }
 
 export default ProjectCard;

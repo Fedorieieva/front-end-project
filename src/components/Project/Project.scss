@@ -4,11 +4,14 @@
   gap: 25px;
 
   width: 100%;
+  background-color: #213a59;
+  padding: 25px;
+  box-shadow: 12px 12px 20px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
 
   .edit-project-btn {
     align-self: flex-end;
     width: 170px;
-    color: #163c6b;
     text-transform: uppercase;
   }
 
@@ -16,6 +19,8 @@
     display: flex;
     flex-direction: column;
     gap: 25px;
+
+    color: #D1DDED;
 
     .project-item {
       .info-bold {
