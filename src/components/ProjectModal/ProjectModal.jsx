@@ -16,6 +16,8 @@ const ProjectModal = ({onClose, project = null}) => {
     const infoInputRef = useRef();
 
     const handleSubmit = async (event) => {
+        event.preventDefault();
+
         const projectData = {
             id: project ? project.id : `${Date.now()}-${Math.floor(Math.random() * 1000)}`,
             name: nameInputRef.current.value.trim(),
@@ -37,6 +39,7 @@ const ProjectModal = ({onClose, project = null}) => {
         nameInputRef.current.value = '';
         descriptionInputRef.current.value = '';
         infoInputRef.current.value = '';
+        onClose();
     }
 
     useEffect(() => {
