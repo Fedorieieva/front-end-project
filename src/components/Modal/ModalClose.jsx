@@ -16,7 +16,9 @@ const ModalClose = (props) => {
 }
 
 ModalClose.propTypes = {
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
+    className: PropTypes.string,
+    children: PropTypes.any
 }
 
 export default ModalClose

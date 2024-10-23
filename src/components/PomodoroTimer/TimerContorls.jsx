@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Button from "@/components/Button/Button.jsx";
+import PropTypes from "prop-types";
 import SettingsModal from "@/components/PomodoroTimer/components/SettingsModal/SettingsModal.jsx";
 import './PomodoroTimer.scss';
 
@@ -53,6 +54,14 @@ const Controls = (props) => {
 
         </div>
     );
+};
+
+Controls.propTypes = {
+    onStart: PropTypes.func,
+    onPause: PropTypes.func,
+    onSkip: PropTypes.func,
+    isRunning: PropTypes.bool,
+    isPaused: PropTypes.bool,
 };
 
 export default Controls;

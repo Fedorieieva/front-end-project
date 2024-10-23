@@ -16,7 +16,8 @@ const ModalWrapper = (props) => {
 
 ModalWrapper.proptypes = {
     children: PropTypes.any,
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
+    className: PropTypes.string
 }
 
 export default ModalWrapper
