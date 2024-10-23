@@ -15,7 +15,7 @@ const PomodoroTimer = () => {
     const [currentTime, setCurrentTime] = useState(studyTime); // Current time left in the timer
     const [currentSession, setCurrentSession] = useState(1); // Current session number
     const [isRunning, setIsRunning] = useState(false); // Timer running state
-    const [isPaused, setIsPaused] = useState(false); // Timer paused state
+    const [isPaused, setIsPaused] = useState(true); // Timer paused state
     const [isStudy, setIsStudy] = useState(true); // Whether it's study time or break time
 
     const timerRef = useRef(null); // Reference to the timer interval
@@ -34,8 +34,6 @@ const PomodoroTimer = () => {
         }
     }, [studyTime, shortBreakTime, longBreakTime, isStudy, currentSession, sessionsBetweenLongBreaks]);
 
-
-    // useEffect hook to handle side effects (timer interval)
     useEffect(() => {
         if (isRunning && !isPaused) {
             // Set interval to update the timer every second

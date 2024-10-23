@@ -10,42 +10,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { actionSetStudyTime, actionSetShortBreakTime, actionSetLongBreakTime, actionSetSessionsBetweenLongBreaks } from '@/store/slices/timeSettings.slice.js';
 
 const SettingsModal = ({ onClose }) => {
-    /*
-    const pomodoroTimeSettings = useSelector(state => state.settings.pomodoroTimeSettings) || {};
-    const { studyTime, shortBreakTime, longBreakTime, sessionsBetweenLongBreaks } = pomodoroTimeSettings;
-    const dispatch = useDispatch();
-
-    const handleStudyTimeChange = (value) => {
-        const newValue = Math.max(0, parseInt(value) || 0);
-        dispatch(actionSetStudyTime(newValue));
-    };
-
-    const handleShortBreakTimeChange = (value) => {
-        const newValue = Math.max(0, parseInt(value) || 0);
-        dispatch(actionSetShortBreakTime(newValue));
-    };
-
-    const handleLongBreakTimeChange = (value) => {
-        const newValue = Math.max(0, parseInt(value) || 0);
-        dispatch(actionSetLongBreakTime(newValue));
-    };
-
-    const handleSessionsBetweenLongBreaksChange = (value) => {
-        const newValue = Math.max(0, parseInt(value) || 0);
-        dispatch(actionSetSessionsBetweenLongBreaks(newValue));
-    };*/
 
     const loadFromLocalStorage = (key, defaultValue) => {
         const storedValue = localStorage.getItem(key);
         return storedValue ? JSON.parse(storedValue) : defaultValue;
     };
 
-    /*
-    const [studyTime, setStudyTime] = useState(25 * 60); // Default to 25 minutes
-    const [shortBreakTime, setShortBreakTime] = useState(5 * 60); // Default to 5 minutes
-    const [longBreakTime, setLongBreakTime] = useState(15 * 60); // Default to 15 minutes
-    const [sessionsBetweenLongBreaks, setSessionsBetweenLongBreaks] = useState(4); // Default to 4 sessions
-    */
     const [studyTime, setStudyTime] = useState(loadFromLocalStorage('studyTime', 25 * 60));
     const [shortBreakTime, setShortBreakTime] = useState(loadFromLocalStorage('shortBreakTime', 5 * 60));
     const [longBreakTime, setLongBreakTime] = useState(loadFromLocalStorage('longBreakTime', 15 * 60));
@@ -69,24 +39,27 @@ const SettingsModal = ({ onClose }) => {
 
 
     const handleStudyTimeChange = (value) => {
-        const newValue = value === '' ? '' : Math.max(0, parseInt(value)) * 60;
+        const newValue = value === '' ? 60 : Math.max(1, parseInt(value)) * 60;
         setStudyTime(newValue);
     };
 
     const handleShortBreakTimeChange = (value) => {
-        const newValue = value === '' ? '' : Math.max(0, parseInt(value)) * 60;
+        const newValue = value === '' ? 60 : Math.max(1, parseInt(value)) * 60;
         setShortBreakTime(newValue);
     };
 
     const handleLongBreakTimeChange = (value) => {
-        const newValue = value === '' ? '' : Math.max(0, parseInt(value)) * 60;
+        const newValue = value === '' ? 60 : Math.max(1, parseInt(value)) * 60;
         setLongBreakTime(newValue);
     };
 
     const handleSessionsBetweenLongBreaksChange = (value) => {
-        const newValue = value === '' ? '' : Math.max(0, parseInt(value));
+        const newValue = value === '' ? 1 : Math.max(1, parseInt(value));
         setSessionsBetweenLongBreaks(newValue);
     };
+
+
+
 
     return ReactDOM.createPortal(
         <ModalWrapper onClick={onClose} className='settings-modal__wrapper'>
@@ -95,45 +68,59 @@ const SettingsModal = ({ onClose }) => {
                 onClick={(event) => event.stopPropagation()}
             >
                 <ModalHeader className='modal-content__header'>
-                    <ModalClose className='modal__close-icon' onClick={onClose} >
+                    <ModalClose className='modal__close-icon' onClick={onClose}>
                         <Close />
                     </ModalClose>
                 </ModalHeader>
 
                 <ModalBody className='modal__body'>
-                    <h3>Settings</h3>
-                    <label>
-                        Study Time (minutes):
+                    <h3 className={"settings__label"}>Settings</h3>
+
+                    <div className="settings__row">
+                        <label className={"option__label"}>Study Time (minutes):</label>
                         <input
+                            className={"settings__input"}
                             type="number"
                             value={studyTime / 60}
+                            min={1}
                             onChange={(e) => handleStudyTimeChange(e.target.value)}
                         />
-                    </label>
-                    <label>
-                        Short Break Time (minutes):
+                    </div>
+
+                    <div className="settings__row">
+                        <label className={"option__label"}>Short Break Time (minutes):</label>
                         <input
+                            className={"settings__input"}
                             type="number"
                             value={shortBreakTime / 60}
+                            min={1}
                             onChange={(e) => handleShortBreakTimeChange(e.target.value)}
                         />
-                    </label>
-                    <label>
-                        Long Break Time (minutes):
+                    </div>
+
+                    <div className="settings__row">
+                        <label className={"option__label"}>Long Break Time (minutes):</label>
                         <input
+                            className={"settings__input"}
                             type="number"
                             value={longBreakTime / 60}
+                            min={1}
                             onChange={(e) => handleLongBreakTimeChange(e.target.value)}
                         />
-                    </label>
-                    <label>
-                        Sessions Between Long Breaks:
+                    </div>
+
+                    <div className="settings__row">
+                        <label className={"option__label"}>Sessions Between Long Breaks:</label>
                         <input
+                            className={"settings__input"}
                             type="number"
                             value={sessionsBetweenLongBreaks}
+                            min={1}
                             onChange={(e) => handleSessionsBetweenLongBreaksChange(e.target.value)}
                         />
-                    </label>
+                    </div>
+
+                    <Button className='save-btn' onClick={onClose}>Save</Button>
                 </ModalBody>
             </div>
         </ModalWrapper>,

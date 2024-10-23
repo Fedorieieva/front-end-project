@@ -20,7 +20,7 @@ const Modal = ({ onClose }) => {
     }, []);
 
     const handleLinkClick = () => {
-        onClose(); // Close the modal
+        onClose();
     };
 
     return ReactDOM.createPortal(
@@ -49,9 +49,6 @@ const Modal = ({ onClose }) => {
                         </li>
                         <li className='modal__nav-item'>
                             <Link className='modal__nav-link' to='/work-mode' onClick={handleLinkClick}>Work Mode</Link>
-                        </li>
-                        <li className='modal__nav-item'>
-                            <Link className='modal__nav-link' to='/playlists' onClick={handleLinkClick}>Playlists</Link>
                         </li>
                     </ul>
                 </ModalBody>
