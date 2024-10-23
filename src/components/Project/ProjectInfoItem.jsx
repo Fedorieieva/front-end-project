@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const ProjectInfoItem = ({item, title}) => {
     return (
@@ -8,5 +9,10 @@ const ProjectInfoItem = ({item, title}) => {
         </div>
     )
 }
+
+ProjectInfoItem.propTypes = {
+    item: PropTypes.string,
+    title: PropTypes.string
+};
 
 export default ProjectInfoItem

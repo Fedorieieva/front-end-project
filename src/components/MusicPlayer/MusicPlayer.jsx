@@ -8,12 +8,10 @@ const MusicPlayer = () => {
     };
 
     const handlePlayButtonClick = () => {
-        // Встановлюємо URL для iframe
         const urlPattern = /(?:list=)([a-zA-Z0-9_-]+)/;
         const match = url.match(urlPattern);
 
         if (match) {
-            // Отримуємо ID плейлиста
             const playlistID = match[1];
             setUrl(`https://www.youtube.com/embed?listType=playlist&list=${playlistID}&rel=0&showinfo=0`);
         } else {

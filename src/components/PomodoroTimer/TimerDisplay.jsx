@@ -1,5 +1,6 @@
 import React from 'react';
 import './PomodoroTimer.scss';
+import PropTypes from "prop-types";
 
 const TimerDisplay = ({ isFocus, currentTime }) => {
     const formatTime = (time) => {
@@ -14,6 +15,11 @@ const TimerDisplay = ({ isFocus, currentTime }) => {
             <p className="pomodoro-time">{formatTime(currentTime)}</p>
         </div>
     );
+};
+
+TimerDisplay.propTypes = {
+    isFocus: PropTypes.bool,
+    currentTime: PropTypes.number
 };
 
 export default TimerDisplay;

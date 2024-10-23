@@ -9,7 +9,6 @@ import Button from "@/components/Button/Button.jsx";
 import ProjectModal from "@/components/ProjectModal/ProjectModal.jsx";
 
 const ProjectCardWrapper = ({data}) => {
-    // console.log(data)
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
@@ -41,8 +40,8 @@ const ProjectCardWrapper = ({data}) => {
     );
 };
 
-// ProjectCardWrapper.propTypes = {
-//     data: PropTypes.object
-// }
+ProjectCardWrapper.propTypes = {
+    data: PropTypes.array
+}
 
 export default ProjectCardWrapper;

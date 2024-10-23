@@ -4,7 +4,6 @@ import TimerDisplay from "./TimerDisplay";
 import TimerContorls from "./TimerContorls";
 import './PomodoroTimer.scss';
 import Container from "@/components/Container/Container";
-import Button from "@/components/Button/Button";
 
 const PomodoroTimer = () => {
     const studyTime = JSON.parse(localStorage.getItem('studyTime'));
@@ -12,13 +11,13 @@ const PomodoroTimer = () => {
     const longBreakTime = JSON.parse(localStorage.getItem('longBreakTime'));
     const sessionsBetweenLongBreaks = JSON.parse(localStorage.getItem('sessionsBetweenLongBreaks'));
 
-    const [currentTime, setCurrentTime] = useState(studyTime); // Current time left in the timer
-    const [currentSession, setCurrentSession] = useState(1); // Current session number
-    const [isRunning, setIsRunning] = useState(false); // Timer running state
-    const [isPaused, setIsPaused] = useState(true); // Timer paused state
-    const [isStudy, setIsStudy] = useState(true); // Whether it's study time or break time
+    const [currentTime, setCurrentTime] = useState(studyTime);
+    const [currentSession, setCurrentSession] = useState(1);
+    const [isRunning, setIsRunning] = useState(false);
+    const [isPaused, setIsPaused] = useState(true);
+    const [isStudy, setIsStudy] = useState(true);
 
-    const timerRef = useRef(null); // Reference to the timer interval
+    const timerRef = useRef(null);
 
     useEffect(() => {
         if (isStudy) {
@@ -36,19 +35,17 @@ const PomodoroTimer = () => {
 
     useEffect(() => {
         if (isRunning && !isPaused) {
-            // Set interval to update the timer every second
             timerRef.current = setInterval(() => {
                 setCurrentTime(prevTime => {
                     if (prevTime <= 1) {
-                        clearInterval(timerRef.current); // Clear interval when time is up
-                        handleSessionEnd(); // Handle end of session
+                        clearInterval(timerRef.current);
+                        handleSessionEnd();
                         return 0;
                     }
-                    return prevTime - 1; // Decrement time by 1 second
+                    return prevTime - 1;
                 });
             }, 1000);
         }
-        // Cleanup function to clear interval when component unmounts or dependencies change
         return () => clearInterval(timerRef.current);
     }, [isRunning, isPaused]);
 
@@ -63,7 +60,7 @@ const PomodoroTimer = () => {
         } else {
             setCurrentTime(studyTime);
             setIsStudy(true);
-            setCurrentSession(prevSession => prevSession + 1); // Increment session count
+            setCurrentSession(prevSession => prevSession + 1);
         }
         setIsRunning(false);
     };
