@@ -1,11 +1,23 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import Button from "@/components/Button/Button.jsx";
 import SettingsModal from "@/components/PomodoroTimer/components/SettingsModal/SettingsModal.jsx";
 import './PomodoroTimer.scss';
 
-const Controls = ({ onStart, onPause, onSkip, isRunning, isPaused }) => {
+const Controls = (props) => {
+    const {onStart, onPause, onSkip, isRunning, isPaused} = props;
     const [currentButton, setCurrentButton] = useState("start");
     const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+
+    useEffect(() => {
+        if (!isRunning) {
+            handleEnd();
+        }
+    }, [isRunning]);
+
+    const handleEnd = () => {
+        setCurrentButton("start");
+    }
+
 
     const handleStart = () => {
         onStart();

@@ -1,38 +1,89 @@
+.settings__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.option__label {
+  text-align: left;
+}
+
+.settings__input {
+  width: 100%;
+}
+
+.modal__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .settings__label {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .settings__row {
+    margin-bottom: 20px;
+  }
+
+  .settings__input {
+    width: 100px;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+
+    &:focus {
+      border-color: #007BFF;
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    &:disabled {
+      background-color: #e9ecef;
+      color: #6c757d;
+    }
+  }
+}
+
 .settings-modal__wrapper {
   justify-content: center;
   align-items: center;
 
   .settings-modal__content {
     min-width: 600px;
-    max-height: 95vh; /* Set a max height for the modal */
+    max-height: 95vh;
     overflow-y: auto;
     padding: 25px;
-    box-shadow: 12px 12px 20px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
-    background: linear-gradient(136deg, #031930 40.65%, #2c4d77 67.12%, #39659b 83.56%, #477cbf 100%);
-
-    &::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: #B3D6F9;
-      border-radius: 10px;
-    }
-
-    &::-webkit-scrollbar-thumb:hover {
-      background: #A1C8E0;
-    }
+    background-color: #0a2641;
   }
 
   .modal-content__header {
     justify-content: flex-end;
     margin-bottom: 20px;
   }
+}
 
-  }
+
+.save-btn{
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    transition: 700ms;
+
+    &:hover{
+        transform: scale(1.05);
+    }
+}
